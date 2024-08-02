@@ -3,52 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lift Simulation</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Escalator System</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="buttons">
-            <button onclick="goToFloor(1)">
-                <img src="1.png" alt="1"> 1
-            </button>
-            <button onclick="goToFloor(2)">
-                <img src="1.png" alt="2"> 2
-            </button>
-            <button onclick="goToFloor(3)">
-                <img src="1.png" alt="3"> 3
-            </button>
-            <button onclick="goToFloor(4)">
-                <img src="1.png" alt="4"> 4
-            </button>
-            <button onclick="goToFloor(5)">
-                <img src="1.png" alt="5"> 5
-            </button>
-            <button onclick="goToFloor(6)">
-                <img src="1.png" alt="6"> 6
-            </button>
-            <button class="ground" onclick="goToGround()">
-                <img src="1.png" alt="G"> Ground
-            </button>
+    <div class="escalator-outer">
+        <div class="floor-labels">
+            <div id="label-4" class="floor-label">4</div>
+            <div id="label-3" class="floor-label">3</div>
+            <div id="label-2" class="floor-label">2</div>
+            <div id="label-1" class="floor-label">1</div>
+            <div id="label-ground" class="floor-label">Ground</div>
         </div>
-        <div class="escalator">
-            <div class="floor-indicator" id="floor-indicator">Ground Floor</div>
-            <div class="lift-container">
-                <div class="lift" id="lift">
-                    <div class="gate left-gate"></div>
-                    <div class="gate right-gate"></div>
-                </div>
-            </div>
-            <div class="floor-lines">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
+        <div class="chain-container"></div>
+        <div class="escalator-inner" id="escalator">
+            <div class="escalator-left"></div>
+            <div class="escalator-right"></div>
         </div>
+        <div class="floor" id="floor-4">4</div>
+        <div class="floor" id="floor-3">3</div>
+        <div class="floor" id="floor-2">2</div>
+        <div class="floor" id="floor-1">1</div>
+        <div class="ground" id="ground">Ground</div>
+        <img id="man-image" src="MAN.jpg" alt="MAN">
+        <img class="chain" src="chain.jpg" alt="chain">
     </div>
-    <script src="app.js"></script>
+    <div class="buttons">
+        <button class="floor-button" onclick="moveToFloor(4)">4</button>
+        <button class="floor-button" onclick="moveToFloor(3)">3</button>
+        <button class="floor-button" onclick="moveToFloor(2)">2</button>
+        <button class="floor-button" onclick="moveToFloor(1)">1</button>
+        <button class="floor-button" onclick="moveToFloor(0)">Ground</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

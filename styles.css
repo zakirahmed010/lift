@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.escalator-outer {
+    width: 200px;
+    height: 620px;
+    border: 4px solid #333;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden;
+}
+
+.floor-labels {
+    position: absolute;
+    top: 50%; /* Center the labels vertically */
+    right: -50px; /* Position labels outside the lift */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 10; /* Ensure labels are above other content */
+}
+
+.floor-label {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 2px solid #000;
+    padding: 5px;
+    text-align: center;
+    display: none;
+}
+
+.chain-container {
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: url('chain.jpg') repeat-y;
+    transform: translateX(-50%);
+    transition: top 1s ease;
+}
+
+.escalator-inner {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    transition: bottom 1s ease;
+}
+
+.escalator-left, .escalator-right {
+    width: 50%;
+    background-color: #0a0000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: transform 600ms ease-in-out;
+}
+
+.escalator-left {
+    border-right: 2px solid white;
+}
+
+.floor, .ground {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+}
+
+#floor-4 { bottom: 300px; }
+#floor-3 { bottom: 200px; }
+#floor-2 { bottom: 100px; }
+#floor-1 { bottom: 0; }
+#ground { bottom: 0; }
+
+#man-image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    max-width: 100%;
+    max-height: 20%;
+    background: transparent;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #09f37e;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
